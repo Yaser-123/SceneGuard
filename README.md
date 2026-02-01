@@ -6,6 +6,12 @@ SceneGuard helps film production teams evaluate scene feasibility before shootin
 
 ---
 
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
 ## 🚀 What You'll Need Before Starting
 
 Before you can run this project on your computer, you'll need to install a few free tools. Don't worry—these are one-time installations!
@@ -265,12 +271,6 @@ Found a bug? Have a feature idea? Contributions are welcome!
    git push origin my-feature
    ```
 5. **Open a Pull Request** on GitHub
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
