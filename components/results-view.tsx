@@ -75,43 +75,43 @@ export default function ResultsView({ analysis }: ResultsViewProps) {
       </Card>
 
       {/* RISK CATEGORIES - FROM PPT */}
-      <Card>
+      <Card className="bg-neutral-900 border-neutral-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 text-neutral-200">
             <TrendingUp className="h-5 w-5" />
             Risk Categories
           </CardTitle>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="text-sm text-neutral-400 mt-2">
             Production constraints identified across four categories
           </p>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             {/* High Priority Count */}
-            <Card className="bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-900">
+            <Card className="bg-neutral-800 border-red-500 border-l-4">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <AlertTriangle className="h-6 w-6 text-red-600 dark:text-red-400" />
+                  <AlertTriangle className="h-6 w-6 text-red-400" />
                   <div>
-                    <div className="text-2xl font-bold text-red-700 dark:text-red-400">
+                    <div className="text-2xl font-bold text-red-400">
                       {feasibility.highRiskCount}
                     </div>
-                    <div className="text-sm text-red-600 dark:text-red-500">High Priority</div>
+                    <div className="text-sm text-red-300">High Priority</div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Medium Priority Count */}
-            <Card className="bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-900">
+            <Card className="bg-neutral-800 border-yellow-500 border-l-4">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <AlertTriangle className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
+                  <AlertTriangle className="h-6 w-6 text-yellow-400" />
                   <div>
-                    <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-400">
+                    <div className="text-2xl font-bold text-yellow-400">
                       {feasibility.mediumRiskCount}
                     </div>
-                    <div className="text-sm text-yellow-600 dark:text-yellow-500">
+                    <div className="text-sm text-yellow-300">
                       Medium Priority
                     </div>
                   </div>
@@ -123,27 +123,27 @@ export default function ResultsView({ analysis }: ResultsViewProps) {
           {/* Risk Category Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Budget */}
-            <Card className="border-l-4 border-l-blue-500">
+            <Card className="bg-neutral-800 border-neutral-700 border-l-4 border-l-blue-500">
               <CardContent className="pt-4">
                 <div className="flex items-start gap-3">
-                  <DollarSign className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                  <DollarSign className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-sm">Budget</h4>
+                      <h4 className="font-semibold text-sm text-neutral-100">Budget</h4>
                       <Badge
                         variant="outline"
                         className={
                           constraints.budget.level === 'High'
-                            ? 'bg-red-500/20 text-red-700 dark:text-red-400'
+                            ? 'bg-red-500/20 text-red-400'
                             : constraints.budget.level === 'Medium'
-                            ? 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-400'
-                            : 'bg-green-500/20 text-green-700 dark:text-green-400'
+                            ? 'bg-yellow-500/20 text-yellow-400'
+                            : 'bg-green-500/20 text-green-400'
                         }
                       >
                         {constraints.budget.level}
                       </Badge>
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-neutral-400 leading-relaxed">
                       {constraints.budget.reasoning}
                     </p>
                   </div>
@@ -152,27 +152,27 @@ export default function ResultsView({ analysis }: ResultsViewProps) {
             </Card>
 
             {/* Logistics */}
-            <Card className="border-l-4 border-l-purple-500">
+            <Card className="bg-neutral-800 border-neutral-700 border-l-4 border-l-purple-500">
               <CardContent className="pt-4">
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                  <MapPin className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-sm">Logistics</h4>
+                      <h4 className="font-semibold text-sm text-neutral-100">Logistics</h4>
                       <Badge
                         variant="outline"
                         className={
                           constraints.logistics.level === 'High'
-                            ? 'bg-red-500/20 text-red-700 dark:text-red-400'
+                            ? 'bg-red-500/20 text-red-400'
                             : constraints.logistics.level === 'Medium'
-                            ? 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-400'
-                            : 'bg-green-500/20 text-green-700 dark:text-green-400'
+                            ? 'bg-yellow-500/20 text-yellow-400'
+                            : 'bg-green-500/20 text-green-400'
                         }
                       >
                         {constraints.logistics.level}
                       </Badge>
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-neutral-400 leading-relaxed">
                       {constraints.logistics.reasoning}
                     </p>
                   </div>
@@ -181,27 +181,27 @@ export default function ResultsView({ analysis }: ResultsViewProps) {
             </Card>
 
             {/* Safety */}
-            <Card className="border-l-4 border-l-red-500">
+            <Card className="bg-neutral-800 border-neutral-700 border-l-4 border-l-red-500">
               <CardContent className="pt-4">
                 <div className="flex items-start gap-3">
-                  <Shield className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                  <Shield className="h-5 w-5 text-red-400 flex-shrink-0 mt-0.5" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-sm">Safety</h4>
+                      <h4 className="font-semibold text-sm text-neutral-100">Safety</h4>
                       <Badge
                         variant="outline"
                         className={
                           constraints.safety.level === 'High'
-                            ? 'bg-red-500/20 text-red-700 dark:text-red-400'
+                            ? 'bg-red-500/20 text-red-400'
                             : constraints.safety.level === 'Medium'
-                            ? 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-400'
-                            : 'bg-green-500/20 text-green-700 dark:text-green-400'
+                            ? 'bg-yellow-500/20 text-yellow-400'
+                            : 'bg-green-500/20 text-green-400'
                         }
                       >
                         {constraints.safety.level}
                       </Badge>
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-neutral-400 leading-relaxed">
                       {constraints.safety.reasoning}
                     </p>
                   </div>
@@ -210,27 +210,27 @@ export default function ResultsView({ analysis }: ResultsViewProps) {
             </Card>
 
             {/* Technical */}
-            <Card className="border-l-4 border-l-green-500">
+            <Card className="bg-neutral-800 border-neutral-700 border-l-4 border-l-green-500">
               <CardContent className="pt-4">
                 <div className="flex items-start gap-3">
-                  <Wrench className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                  <Wrench className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-sm">Technical</h4>
+                      <h4 className="font-semibold text-sm text-neutral-100">Technical</h4>
                       <Badge
                         variant="outline"
                         className={
                           constraints.technical.level === 'High'
-                            ? 'bg-red-500/20 text-red-700 dark:text-red-400'
+                            ? 'bg-red-500/20 text-red-400'
                             : constraints.technical.level === 'Medium'
-                            ? 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-400'
-                            : 'bg-green-500/20 text-green-700 dark:text-green-400'
+                            ? 'bg-yellow-500/20 text-yellow-400'
+                            : 'bg-green-500/20 text-green-400'
                         }
                       >
                         {constraints.technical.level}
                       </Badge>
                     </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-neutral-400 leading-relaxed">
                       {constraints.technical.reasoning}
                     </p>
                   </div>
@@ -256,13 +256,13 @@ export default function ResultsView({ analysis }: ResultsViewProps) {
       />
 
       {/* MITIGATION STEPS */}
-      <Card>
+      <Card className="bg-neutral-900 border-neutral-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 text-neutral-200">
             <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400" />
             Mitigation Steps
           </CardTitle>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="text-sm text-neutral-400 mt-2">
             Actionable recommendations to reduce risk before production begins
           </p>
         </CardHeader>

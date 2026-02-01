@@ -170,18 +170,18 @@ export default function PlanningWarnings({
 
   if (warnings.length === 0) {
     return (
-      <Card className="w-full">
+      <Card className="w-full bg-neutral-900 border-neutral-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 text-neutral-200">
             <AlertTriangle className="h-5 w-5 text-green-600 dark:text-green-400" />
             Planning Warnings
           </CardTitle>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="text-sm text-neutral-400 mt-2">
             Early alerts for scheduling conflicts, budget implications, and resource gaps
           </p>
         </CardHeader>
         <CardContent>
-          <div className="text-center py-6 text-muted-foreground">
+          <div className="text-center py-6 text-neutral-400">
             <Shield className="h-12 w-12 mx-auto mb-3 opacity-50" />
             <p className="text-sm">
               No critical warnings detected. Scene appears production-ready with standard
@@ -196,10 +196,10 @@ export default function PlanningWarnings({
   const highSeverityCount = warnings.filter((w) => w.severity === 'high').length;
 
   return (
-    <Card className="w-full">
+    <Card className="w-full bg-neutral-900 border-neutral-700">
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 text-neutral-200">
             <AlertTriangle className="h-5 w-5 text-yellow-600 dark:text-yellow-500" />
             Planning Warnings
           </CardTitle>
@@ -207,7 +207,7 @@ export default function PlanningWarnings({
             <Badge variant="destructive">{highSeverityCount} High Priority</Badge>
           )}
         </div>
-        <p className="text-sm text-muted-foreground mt-2">
+        <p className="text-sm text-neutral-400 mt-2">
           Early alerts for scheduling conflicts, budget implications, and resource gaps
         </p>
       </CardHeader>

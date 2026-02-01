@@ -164,15 +164,15 @@ export default function ProductionChecklist({
   const impactedCount = checklistItems.filter((item) => item.impacted).length;
 
   return (
-    <Card className="w-full">
+    <Card className="w-full bg-neutral-900 border-neutral-700">
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle>Production Checklist</CardTitle>
-          <Badge variant="outline">
+          <CardTitle className="text-neutral-200">Production Checklist</CardTitle>
+          <Badge variant="outline" className="text-neutral-200 border-neutral-500">
             {impactedCount} item{impactedCount !== 1 ? 's' : ''} affected
           </Badge>
         </div>
-        <p className="text-sm text-muted-foreground mt-2">
+        <p className="text-sm text-neutral-400 mt-2">
           Standard pre-production tasks impacted by this scene
         </p>
       </CardHeader>
@@ -183,8 +183,8 @@ export default function ProductionChecklist({
               key={item.id}
               className={`flex items-start gap-3 p-3 rounded-lg border transition-colors ${
                 item.impacted
-                  ? 'bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-900'
-                  : 'bg-muted/50 border-muted'
+                  ? 'bg-neutral-800 border-yellow-600'
+                  : 'bg-neutral-800 border-neutral-600'
               }`}
             >
               <div className="flex-shrink-0 mt-0.5">
@@ -195,10 +195,10 @@ export default function ProductionChecklist({
                 )}
               </div>
               <div className="flex-1 min-w-0">
-                <div className="font-medium text-sm">{item.title}</div>
-                <div className="text-xs text-muted-foreground mt-0.5">{item.description}</div>
+                <div className="font-medium text-sm text-neutral-200">{item.title}</div>
+                <div className="text-xs text-neutral-400 mt-0.5">{item.description}</div>
                 {item.impacted && item.reason && (
-                  <div className="text-xs text-yellow-700 dark:text-yellow-400 mt-1">
+                  <div className="text-xs text-yellow-400 mt-1">
                     ⚠ {item.reason}
                   </div>
                 )}
